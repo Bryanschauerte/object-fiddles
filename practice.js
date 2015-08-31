@@ -193,6 +193,13 @@ for(var prop in user) {
   }
 }
 
+//OR THIS WORKS TOO
+
+for(var prop in user) {
+if(!user[prop]){
+delete user[prop];}
+}
+
 //Once you get your truthy Object, Change the remaining values in the object
 // to be specific to you (name: 'your name', username: 'your username'), rather
 // than my information.
