@@ -284,11 +284,11 @@ methodCollection.logHello();
 
   //Code Here
 function MakePerson(name, birthday, ssn) {
-  this.name = name;
-  this.birthday = birthday;
-  this.ssn = ssn;
+return {name: name,
+  birthday: birthday,
+  ssn: ssn
 }
-
+}
 
 //NEXT PROBLEM
 
@@ -299,11 +299,11 @@ function MakePerson(name, birthday, ssn) {
  //MakeCard, you get a brand new credit card.
 
   //Code Here
-function MakeCard(name, birthday, address) {
-
-    this.name = name;
-    this.birthday = birthday;
-    this.address = address;
+function MakeCard(number, expiration) {
+  return {
+    number: name;
+    expiration: expiration;
+  }
 
 }
 
@@ -319,13 +319,25 @@ function MakeCard(name, birthday, address) {
 for(var prop in object) {console.log(prop)}
 */
 
-  //Code Here
-  function bindCard(personObj, creditCardObj){
-    for(var prop in personObj){
-      this.prop = personObj;
-    }
-    for(var prop in creditCardObj){
-      this.prop = personObj;
-    }
+function bindCard(personOb, creditObj) {
 
+return {
+  name: person.name,
+  birthday: person.bithday,
+  ssn: person.ssn,
+  number: card.number,
+  expiration: card.expiration
+  }
+}
+
+
+//Or a loop
+  function bindCard(person, Card){
+    var combined = {};
+      for (var prop in person) {
+      combined[prop]= person[prop];
+    } for (var prop in card) {
+      combined[prop] = card[prop];
+    }
+    return combined;
   }
